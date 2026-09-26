@@ -1,0 +1,360 @@
+# Installation and Usage Guide
+
+This guide explains how to download **Academic Writing Humanizer** and use it with an AI assistant.
+
+[Repository](https://github.com/Zink-Liu/Academic-Writing-Humanizer) · [Skill Instructions](./SKILL.md) · [README](./README.md)
+
+## Overview
+
+Academic Writing Humanizer is a Markdown-based instruction skill for academic rewriting. It helps an AI assistant improve clarity, sentence structure, and natural expression while preserving scientific meaning.
+
+No server, database, Python environment, or SQL execution is required for manual use. The rewriting takes place in the AI application where you load the instructions.
+
+## 1. Download
+
+### Option A: Download ZIP
+
+1. Open the [GitHub repository](https://github.com/Zink-Liu/Academic-Writing-Humanizer).
+2. Click **Code**.
+3. Select **Download ZIP**.
+4. Extract the downloaded archive.
+5. Locate `SKILL.md`.
+
+**[Download the repository as a ZIP](https://github.com/Zink-Liu/Academic-Writing-Humanizer/archive/refs/heads/main.zip)**
+
+### Option B: Copy the instructions
+
+1. Open [`SKILL.md`](./SKILL.md).
+2. Click **Raw** to display the plain text.
+3. Copy the complete contents, including the opening metadata and all instruction sections.
+
+### Option C: Download with Git
+
+If Git is installed, run:
+
+```bash
+git clone https://github.com/Zink-Liu/Academic-Writing-Humanizer.git
+cd Academic-Writing-Humanizer
+```
+
+Cloning downloads the files. It does not automatically activate the skill in an AI application.
+
+## 2. Choose Your Setup Method
+
+| Method | Suitable for |
+|---|---|
+| Upload `SKILL.md` | Assistants that can read Markdown attachments |
+| Paste the instructions | Applications without file uploads |
+| Save in a project or custom assistant | Repeated use with persistent instructions |
+| Install as an agent skill | Applications that explicitly support `SKILL.md` skills |
+
+## 3. Upload the File to an AI Assistant
+
+Start a new conversation in an assistant that can read Markdown files.
+
+Upload `SKILL.md`, then send:
+
+```text
+Read the attached SKILL.md and apply its instructions to my
+academic rewriting requests in this conversation.
+
+Preserve scientific meaning, numerical results, citations,
+methodological distinctions, and necessary qualifications.
+
+If you cannot read the attachment, tell me before proceeding.
+```
+
+Next, provide your text and requirements:
+
+```text
+Revise the following text using Academic Writing Humanizer.
+
+Section: Abstract
+Language: English
+Style: Formal academic English
+Maximum length: 250 words
+Output: One complete revised abstract
+
+Use a declarative opening.
+Preserve all numerical results, methodological details,
+citations, and necessary qualifications.
+Do not add findings or strengthen causal claims.
+
+Source text:
+[Paste your text here]
+```
+
+Uploading the file makes it available in that conversation. It does not necessarily create a permanent installation. In a new conversation, upload it again unless your application provides persistent access.
+
+## 4. Use Without Uploading a File
+
+If your application does not support attachments:
+
+1. Open `SKILL.md`.
+2. Copy its complete contents.
+3. Paste the instructions into the conversation.
+4. Add your source text and requirements.
+
+Example:
+
+```text
+Apply the skill instructions above to the passage below.
+
+Section: Discussion
+Style: Formal academic English
+Maximum length: 500 words
+
+Improve clarity, reduce repetition, and strengthen transitions.
+Preserve the scientific interpretation, citations, and limitations.
+Keep technical terminology consistent.
+
+Source text:
+[Paste your text here]
+```
+
+If the complete instructions exceed the application's input limit, use a supported file or project feature instead of silently omitting sections.
+
+## 5. Add to a Project or Custom Assistant
+
+If your AI application supports saved instructions or reference files:
+
+1. Open the project or assistant configuration.
+2. Upload `SKILL.md` as a reference file, or paste its full contents into an instruction field that can accommodate it.
+3. When using a reference file, add the following direction to the saved instructions:
+
+```text
+For academic rewriting requests, read and apply SKILL.md.
+
+Follow the user's manuscript requirements and preserve
+the scientific content of the source.
+
+If the file is unavailable, state that clearly.
+```
+
+4. Save the configuration.
+5. Start a conversation within that project or assistant.
+6. Explicitly request Academic Writing Humanizer when submitting text.
+
+Example:
+
+```text
+Use Academic Writing Humanizer from the project files
+to revise the following Introduction.
+
+Preserve all citations and scientific claims.
+Improve paragraph flow and reduce unnecessary repetition.
+Do not exceed the original word count.
+
+[Paste your text here]
+```
+
+Configuration names, supported file types, and persistence vary between applications. Follow the application's documentation. Storing a reference file does not ensure that it is consulted for every request.
+
+## 6. Install in a Skill-Compatible Agent
+
+For applications that explicitly support `SKILL.md`-based skills, use the following folder structure:
+
+```text
+academic-writing-humanizer/
+    SKILL.md
+```
+
+Install it using your agent's documented skill directory or import mechanism.
+
+General steps:
+
+1. Create a folder named `academic-writing-humanizer`.
+2. Place `SKILL.md` inside it.
+3. Import or move the folder according to the application's instructions.
+4. Reload the skill list or start a new session if required.
+5. Invoke `academic-writing-humanizer` using the application's supported syntax.
+
+There is no universal installation directory shared by all AI applications. A folder named `skills` will not necessarily be discovered automatically.
+
+## 7. Check That the Skill Is Being Applied
+
+Start with a short passage:
+
+```text
+Apply Academic Writing Humanizer to the passage below.
+
+First, briefly state the main constraints you will follow.
+Then provide one revised version within 120 words.
+
+Preserve every number, citation, and necessary qualification.
+Do not claim a detector result without a matching report.
+
+Source text:
+[Paste a short passage here]
+```
+
+Compare the revision with the source. Check that:
+
+- Numerical values and units remain accurate.
+- Scientific meaning is preserved.
+- Methods and validation procedures remain correctly described.
+- Citations stay attached to the appropriate claims.
+- Necessary qualifications remain present.
+- The tone is formal and natural.
+- The word limit is respected.
+
+An assistant saying that the skill is loaded does not by itself confirm correct application. Inspect the actual output.
+
+## 8. Common Usage Examples
+
+### Revise an abstract
+
+```text
+Use Academic Writing Humanizer.
+
+Revise this abstract into natural, formal academic English.
+Maximum length: 250 words.
+
+Preserve all quantitative results and methodological details.
+Return one complete revised abstract.
+
+[Paste your abstract here]
+```
+
+### Improve an introduction
+
+```text
+Use Academic Writing Humanizer.
+
+Improve the logical flow of this Introduction.
+Make the research gap and study objective clear.
+Preserve citations and avoid adding unsupported claims.
+Do not increase the original word count.
+
+[Paste your Introduction here]
+```
+
+### Refine a discussion
+
+```text
+Use Academic Writing Humanizer.
+
+Revise this Discussion for clarity and coherence.
+Reduce repetition while preserving the interpretation,
+alternative explanations, and limitations.
+Keep conclusions proportional to the evidence.
+
+[Paste your Discussion here]
+```
+
+### Shorten a passage
+
+```text
+Use Academic Writing Humanizer.
+
+Reduce the following passage to no more than 150 words.
+Preserve the main findings, numerical results, and
+essential qualifications.
+
+If the limit cannot be met without losing essential
+information, explain the conflict.
+
+[Paste your text here]
+```
+
+### Follow journal requirements
+
+```text
+Use Academic Writing Humanizer.
+
+Target journal: [Journal name]
+Section: [Manuscript section]
+Maximum length: [Word limit]
+
+Journal requirements:
+[Paste the relevant requirements]
+
+Follow these requirements while preserving the scientific
+content. Return one complete revised version.
+
+Source text:
+[Paste your text here]
+```
+
+## 9. Optional AI-Detector Feedback
+
+Detector scans are separate from this skill.
+
+If you wish to use detector feedback:
+
+1. Generate a revision.
+2. Save the exact text under a revision identifier.
+3. Scan it using your chosen detector.
+4. Bring the matching report back to the conversation.
+
+Example:
+
+```text
+This report corresponds to revision R1.
+
+Detector: [Name]
+Classification: [Exact displayed label]
+Reported probability: [If available]
+Scan date and version: [If available]
+
+Use this feedback for a further revision while preserving
+scientific meaning, academic tone, and the word limit.
+
+Do not claim that the new version has been tested.
+```
+
+The skill does not include a detector account, API connection, or scanning credits. Detector outcomes may vary, and no particular classification is guaranteed.
+
+## 10. Update the Skill
+
+The project will be refined through continued use and feedback.
+
+### If you downloaded a ZIP
+
+1. Download the latest repository archive.
+2. Extract the updated `SKILL.md`.
+3. Replace the older file in your project, assistant, or skill folder.
+4. Start a new conversation or reload the configuration if needed.
+
+### If you used Git
+
+For a clean checkout with no local edits, run:
+
+```bash
+git pull --ff-only
+```
+
+If you have customized the skill, keep a copy and review the differences before replacing it.
+
+Updating the repository on your computer does not automatically update a copy previously uploaded to an AI application.
+
+## 11. Troubleshooting
+
+| Problem | Suggested action |
+|---|---|
+| The assistant cannot read the attachment | Open `SKILL.md` and paste its contents into the conversation. |
+| The assistant ignores the instructions | Explicitly ask it to read and apply `SKILL.md` to the current passage. |
+| A new conversation does not remember the skill | Upload or paste it again, or use supported persistent instructions. |
+| The revision changes a number or scientific claim | Identify the discrepancy and request correction against the source. |
+| The output exceeds the word limit | Restate the limit and request a shorter revision that retains essential information. |
+| The language becomes too casual | Specify formal academic English and identify the phrases that need revision. |
+| A detector result appears without an actual scan | Treat it as unverified and request a corrected status. |
+| An update does not affect the output | Replace the older instruction file in the AI application. |
+
+## 12. Feedback and Contributions
+
+The project is open for use and will be updated over time.
+
+Report unclear instructions, unexpected behavior, or improvement suggestions through [GitHub Issues](https://github.com/Zink-Liu/Academic-Writing-Humanizer/issues).
+
+Useful reports include:
+
+- Your setup method.
+- The instruction you gave.
+- What you expected.
+- What the assistant produced.
+- The specific issue that needs improvement.
+
+A short synthetic example is sufficient. You do not need to share unpublished or confidential material.
+
+[Return to README](./README.md)
